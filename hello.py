@@ -1,7 +1,11 @@
 import streamlit as st
-st.title("Hello, Streamlit!")
+import pandas as pd
+import numpy as np
 
-st.write("Welcome to your first Streamlit app.")
+data = pd.read_csv('movies.csv')
+st.write(data)
 
-mov = st.text_input("What is your favorite movie?")
-st.write(f"your favourite movies is {mov}")
+chart_data = pd.DataFrame(np.random.randn(20, 3), columns=['a', 'b', 'c'])
+
+st.bar_chart(chart_data)
+st.line_chart(chart_data)
